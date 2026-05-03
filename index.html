@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GinkleJeff's Cool Wads</title>
+  <style>
+    body { 
+      background: #000080 url("bg.png") repeat top left; 
+      color: #00FF00; 
+      font-family: "Courier New", monospace; 
+      margin: 0; 
+    }
+    a { color: #FF00FF; text-decoration: underline; }
+    table { border: 3px solid #FFFFFF; border-collapse: collapse; }
+    td, th { border: 2px solid #FFFFFF; padding: 8px; }
+    .hl { background: #000000; padding: 2px 6px; border: 2px solid #FFFFFF; }
+  </style>
+</head>
+<body>
+
+<center>
+  <img src="hell.gif" alt="WAD VAULT"><br>
+  <font color="#FFFF00">all my wads are intended for GZdoom :D</font>
+  <hr width="80%" color="#FFFFFF">
+</center>
+
+<marquee behavior="scroll" direction="left" style="color:#FFFF00">• !!Under Construction!! •</marquee>
+
+<table width="80%" align="center">
+  <tr><th colspan="3" bgcolor="#0000FF"><font color="#FFFFFF">Available WADs</font></th></tr>
+</table>
+
+<div id="wadList" style="width:80%;margin:20px auto;"></div>
+
+<script>
+  const wads = [
+    { name: "My Wad", file: "wads/mywad.wad", size: "15 KB", desc: "First wad i made, it doesn't really have a name because IDK what it is. its a weird UAC base kinda thing." },
+    { name: "Slaughterfest 3000", file: "wads/slaughterfest.wad", size: "?? MB", desc: "im not done making this one yet so come back later lol" }
+  ];
+
+  const div = document.getElementById('wadList');
+  wads.forEach(wad => {
+    div.innerHTML += `
+      <table width="100%" style="margin-bottom:15px">
+        <tr><td bgcolor="#000000">
+          <b>${wad.name}</b><br>
+          ${wad.desc}<br>
+          <small>Size: ${wad.size}</small><br><br>
+          <a href="${wad.file}" download><b>[ DOWNLOAD ]</b></a>
+        </td></tr>
+      </table>`;
+  });
+</script>
+
+</body>
+</html>
